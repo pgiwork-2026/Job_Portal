@@ -62,8 +62,22 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_ANON_KEY)
 # used server-side, never exposed to the frontend.
 supabase_admin: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
 
+# app = Flask(__name__)
+# CORS(app, resources={r"/api/*": {"origins": "*"}})  # tighten to your real frontend origin(s) in production
+
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}})  # tighten to your real frontend origin(s) in production
+
+CORS(
+    app,
+    resources={
+        r"/api/*": {
+            "origins": [
+                "https://job-portal-uar6.onrender.com"
+            ]
+        }
+    },
+    supports_credentials=True
+)
 
 
 
