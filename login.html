@@ -640,7 +640,7 @@
   // Point this at your running FastAPI backend (see /grove-backend).
   const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:8000'
-    : 'https://job-portal-c43z.onrender.com'; // <-- replace when you deploy the backend
+    : window.location.origin;
 
   // ============ ROLE SWITCH ============
   const roleSwitch = document.getElementById('roleSwitch');
