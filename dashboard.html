@@ -786,7 +786,7 @@ body.profile-incomplete .dash-grid{grid-template-columns:1fr;max-width:640px;mar
   // ============ CONFIG ============
   const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:8000'
-    : 'https://job-portal-c43z.onrender.com';
+    : window.location.origin;
 
   // ============ AUTH GUARD ============
   const token = sessionStorage.getItem('grove_token');
